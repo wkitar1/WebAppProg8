@@ -12,8 +12,15 @@ const server =
       res.write('<html> <head> <title> Served </title> </head>')
       res.write('<body>')
       res.write('Content \n')
-      res.write('More content \n')
-      res.write('Hello World')    
+res.write('<h2>Places I want to visit</h2>')
+      res.write('<p>There are many beautiful places around the world that I would love to visit. Here are four places that I hope to see someday.</p>')
+      res.write('<table border="1">')
+      res.write('<tr><th>Place</th><th>Country</th><th>Why I Want to Visit</th></tr>')
+      res.write('<tr><td>Mount Fuji</td><td>Japan</td><td>I want to see the beautiful mountain and enjoy the scenery.</td></tr>')
+      res.write('<tr><td>Eiffel Tower</td><td>France</td><td>I want to see the famous landmark and explore Paris.</td></tr>')
+      res.write('<tr><td>Great Wall of China</td><td>China</td><td>I want to experience its history and amazing views.</td></tr>')
+      res.write('<tr><td>Santorini</td><td>Greece</td><td>I want to see the beautiful buildings and enjoy the ocean views.</td></tr>')
+      res.write('</table>')   
       res.end('</body></html>')
       //Close the response
     }                           
