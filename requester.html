@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fetch Request</title>
+  </head>
+  <body>
+    <h1>Wiam uses a fetch request</h1>
+    <input type="number" id="1" placeholder="Enter number 1" />
+    <input type="number" id="2" placeholder="Enter number 2" />
+    <button id="btn">Invoke computation on Server</button>
+    <div id="result"></div>
+    <script>
+      const resultDiv = document.getElementById("result");
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", () => {
+        const num1 = document.getElementById("1").value;
+        const num2 = document.getElementById("2").value;
+
+        const url = `http://127.0.0.1:3001/?x=${num1}&y=${num2}`;
+
+        fetch(url)
+          .then((resp) => {
+            return resp.text();
+          })
+          .then((text) => {
+            resultDiv.textContent = text;
+          })
+          .catch((error) => {
+            resultDiv.textContent = "Error: " + error;
+          });
+      });
+    </script>
+  </body>
+</html>
